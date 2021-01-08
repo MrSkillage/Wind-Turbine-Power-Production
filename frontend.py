@@ -7,8 +7,6 @@ import tensorflow.keras as kr
 # jsonify from flask to json data
 from flask import jsonify
 
-from markupsafe import escape
-
 # Create a new web app.
 app = fl.Flask(__name__)
 
@@ -26,16 +24,7 @@ def power(speed):
     powerResult = theModel.predict([theSpeed])
     return jsonify({"value":powerResult.item(0)})
 
-@app.route("/api/name/<username>")
-def check(username):
-    return {"User" : username}
-
 # Add uniform route
 @app.route("/api/uniform")
 def uniform():
     return {"value" : np.random.normal()}
-
-# Add normal route.
-@app.route('/api/normal')
-def normal():
-  return {"value": np.random.normal()}
