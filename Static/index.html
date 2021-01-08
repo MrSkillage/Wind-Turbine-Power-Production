@@ -1,6 +1,6 @@
 <!doctype html>
 
-<!-- Copied and Adapted from Bootstrap Documentation page -->
+<!-- Copied and Adapted from Bootstrap 'Sign-in' Example page -->
 
 <html lang="en">
   <head>
@@ -16,20 +16,29 @@
   <body class="text-center">
 
     <form class="container">
+
+        <img src="https://www.thriverenewables.co.uk/media/1412/wind-stats-animated.gif"
+        alt="Wind_Turbine_Image">
+
         <h1>Welcome to Wind Turbine Predictor</h1>
         <br>
+        <h2>Enter Wind Speed</h2>
         <input class="form-control" type="number" id="windSpeed" placeholder="Enter the power of wind!" required autofocus>
         <br>
-        <input class="form-control" type="number" id="outputPower" placeholder="Random number here..." aria-label="readonly input example" readonly required autofocus>
+
         <br>
         <div class="row">
             <div class="col-sm">
-              <button type="button" id="yes-button" class="w-100 btn btn-long btn-primary">Yes</button>
+              <button type="button" id="yes-button" class="w-100 btn btn-long btn-primary">Submit Wind</button>
             </div>
             <div class="col-sm">
-              <button type="button" id="no-button" class="w-100 btn btn-long  btn-success">No</button>
+              <button type="button" id="no-button" class="w-100 btn btn-long  btn-success">Outlier Predictions</button>
             </div>
         </div>
+
+        <br>
+        <h2>Predicted Power Generated</h2>
+        <input class="form-control" type="number" id="outputPower" placeholder="Random number here..." aria-label="readonly input example" readonly required autofocus>
     </form>
 
     <!-- Optional JavaScript; choose one of the two! -->
