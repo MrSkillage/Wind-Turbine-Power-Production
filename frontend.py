@@ -21,11 +21,10 @@ def home():
 # Create access to the model.h5
 @app.route("/api/power/<speed>")
 def power(speed):
-    theModel = kr.models.load_model("model.h5")
+    theModel = kr.models.load_model("Jupyter_Notebooks\model.h5")
     theSpeed = float(speed)
     powerResult = theModel.predict([theSpeed])
     return jsonify({"value":powerResult.item(0)})
-    #return jsonify({"value":speed})
 
 @app.route("/api/name/<username>")
 def check(username):
