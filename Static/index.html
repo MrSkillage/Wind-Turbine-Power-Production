@@ -18,9 +18,9 @@
     <form class="container">
         <h1>Welcome to Wind Turbine Predictor</h1>
         <br>
-        <input class="form-control" type="wind" id="wind-text" placeholder="Enter the power of wind!" required autofocus>
+        <input class="form-control" type="number" id="windSpeed" placeholder="Enter the power of wind!" required autofocus>
         <br>
-        <input class="form-control" type="text" id="output" placeholder="Random number here..." aria-label="readonly input example" readonly required autofocus>
+        <input class="form-control" type="number" id="outputPower" placeholder="Random number here..." aria-label="readonly input example" readonly required autofocus>
         <br>
         <div class="row">
             <div class="col-sm">
@@ -47,15 +47,17 @@
     <script>
         $("#yes-button").click(function(e) {
             e.preventDefault();
-            $.getJSON("/api/normal", function(data) {
-                $('#output').val(data.value);
+
+            if ($("windSpeed").val() == "") {return}
+            $.getJSON("/api/power/" + $("#windSpeed").val(), function(data) {
+              $("#outputPower").val(data.value);
             });
         });
 
         $("#no-button").click(function(e) {
             e.preventDefault();
             $.getJSON("/api/uniform", function(data) {
-                $('#output').val(data.value);
+                $('#outputPower').val(data.value);
             });
         });
     </script>
