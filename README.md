@@ -1,11 +1,31 @@
 # Wind-Turbine-Power-Production
 This git-repo is home to a power production predicting model for wind turbines programmed in python. The project is run using Docker and machine learning software from tensorflow and keras
 
-## Running the Program
+## Running the Application via Docker
+
+```bash
+docker build . -t wind-production
+docker run --name wind-production-container -d -p 5000:5000 wind-production
+```
+
+## Running the Application via Flask-python
+Linux
+```bash
+export FLASK_APP=frontend.py
+python3 -m flask run
+```
+
+Windows
+```bash
+set FLASK_APP=frontend.py
+python -m flask run
+```
+
+## Running the Jupyter Notebook
 
 Clone the git-repo to your computer and you should have the following folder structure.
 
-![Folder_Image](img/Repo_folder_Image.PNG)
+![Folder_Image](img/Repo_folder_Image.png)
 
 Next open up a command prompt in this folder. The easiest way to do this is to click on the folder path and type 'cmd' and hit the enter key, as seen below
 
